@@ -1,17 +1,19 @@
 const getc= require('./index')
+require('dotenv').config()
 async function main (){
   
- 
-let r= await getc.getCountriesByGdpGrowth('>4.5') //allowed <= , < , > ,>= , = and number
- 
-if(   typeof r=='object')
-r.forEach( item => console.log(`Страна: ${item.name} Население: ${item.population}`))
+ try {
+  
+let r= await getc.getCountriesByPopulation('>4.5', process.env.APIKEY) //allowed <= , < , > ,>= , = and number
+console.log( `Получено стран: ${r.length}`)
+ }catch(err){
+  console.log(err)
+ }
 }
 main()
-
-  getc.getCountriesByGdpGrowth('>4.5').then( data => {
-   console.log(data.length) //количество стран по данному фильтру
-   data.forEach( item => console.log(`Страна: ${item.name} Рост ВВП ${item.gdp_growth} `))
-})
-  .catch( (err)=> console.log(err))
  
+getc.getCountriesByGdpGrowth('>4.5',process.env.APIKEY).then( data => {
+  console.log(data.length) //количество стран по данному фильтру
+  data.forEach( item => console.log(`Страна: ${item.name} Рост ВВП ${item.gdp_growth} `))
+})
+ .catch( (err)=> console.log( err))
