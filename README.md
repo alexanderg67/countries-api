@@ -1,6 +1,6 @@
 # Countries API
 
-API to get countries with filter population /gdp
+API to get countries with filter population, gdp
 
 ## Description
 Methods: getCountriesByGdpGrowth(filter,APIKey) - get countries array and  filter by GdpGrowth value \
