@@ -5,7 +5,8 @@ API to get countries with filter population /gdp
 ## Description
 Methods: getCountriesByGdpGrowth(filter,APIKey) - get countries array and  filter by GdpGrowth value \
  getCountriesByPopulation(filter,APIKey) - get countries array and  filter by population value \
-Filter supports operators: >, >=, <,<=, = \
+Methods require filter string and APIKey
+Filter supports operators: >, >=, <,<=, = and number \
 Example: getCountriesByGdpGrowth('>=4.5','mykey-33f-ddd') \
 APIKey should be provided from api-ninjas profile https://api-ninjas.com/profile
 ## Usage
